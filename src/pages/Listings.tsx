@@ -12,6 +12,7 @@ export default function Listings() {
 
   const goal = searchParams.get('goal') || 'buy';
   const q = searchParams.get('q') || '';
+  const district = searchParams.get('district');
 
   useEffect(() => {
     setLoading(true);
@@ -47,14 +48,16 @@ export default function Listings() {
         <div className="flex items-center gap-6">
           <div className="flex-grow max-w-lg relative">
             <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-              <span className="bg-gold/10 text-gold px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 border border-gold/30">
-                Kampala <X size={10} className="cursor-pointer" />
-              </span>
+              {district && (
+                <span className="bg-gold/10 text-gold px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 border border-gold/30">
+                  {district} <X size={10} className="cursor-pointer" onClick={() => handleFilterChange('district', '')} />
+                </span>
+              )}
             </div>
             <input
               type="text"
               placeholder="Address, neighborhood, or reference..."
-              className="w-full pl-28 pr-10 py-2.5 bg-white/5 border border-white/10 rounded-sm text-[13px] text-white focus:border-gold outline-none transition-all placeholder:text-white/20"
+              className={`w-full ${district ? 'pl-28' : 'pl-4'} pr-10 py-2.5 bg-white/5 border border-white/10 rounded-sm text-[13px] text-white focus:border-gold outline-none transition-all placeholder:text-white/20`}
               value={q}
               onChange={(e) => handleFilterChange('q', e.target.value)}
             />
@@ -110,7 +113,7 @@ export default function Listings() {
         <div className={`${showMap ? 'w-full lg:w-1/2' : 'w-full'} h-full overflow-y-auto custom-scrollbar bg-warm-white px-6 py-8`}>
           <div className="flex justify-between items-end mb-10 pb-6 border-b border-deep-navy/5">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-1">Listings in Kampala</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-1">Listings {district ? `in ${district}` : 'found'}</p>
               <h2 className="text-3xl font-montserrat font-light text-deep-navy uppercase tracking-widest">
                 Homes for <span className="font-serif-luxury lowercase tracking-normal text-gold">{goal === 'rent' ? 'rent' : 'sale'}</span>
               </h2>

@@ -28,6 +28,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       results = results.filter((p: any) => 
         p.title.toLowerCase().includes(query) || 
         p.location.neighborhood.toLowerCase().includes(query) ||
+        p.location.district.toLowerCase().includes(query) ||
         p.code.toLowerCase().includes(query)
       );
     }

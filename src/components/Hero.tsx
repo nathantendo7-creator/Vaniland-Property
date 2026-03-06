@@ -9,10 +9,11 @@ export default function Hero() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    const trimmedQuery = query.trim();
     if (activeTab === 'sell') {
       navigate('/contact?goal=sell');
     } else {
-      navigate(`/listings?goal=${activeTab}&q=${query}`);
+      navigate(`/listings?goal=${activeTab}&q=${trimmedQuery}`);
     }
   };
 
