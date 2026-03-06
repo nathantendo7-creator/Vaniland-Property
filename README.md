@@ -1,20 +1,61 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Vaniland - Real Estate Management Platform
 
-# Run and deploy your AI Studio app
+Vaniland is a modern, high-performance real estate management platform built with React, TypeScript, and Vite. It features a seamless property search experience, administrative dashboard, and lead management system.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/51ba6fcd-b758-4b6b-a03b-522631a8af61
+- **Property Listings:** Comprehensive property search and filtering system.
+- **Admin Dashboard:** Manage listings, view customer leads, and track feedback.
+- **Interactive Maps:** Visual property locations using Leaflet.
+- **Responsive Design:** Optimized for both mobile and desktop experiences.
+- **Lead Generation:** Automated capture of property inquiries and customer feedback.
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS, GSAP
+- **Backend:** Node.js, Express, tsx
+- **Storage:** Local JSON-based CMS (seeded from `seed/seed-properties.json`)
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd vaniland
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your `GEMINI_API_KEY` and `APP_URL`
+
+### Running Locally
+
+To start the full stack (Vite + Express Server):
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`.
+
+## Scripts
+
+- `npm run dev`: Starts the server and Vite middleware.
+- `npm run build`: Compiles the frontend for production.
+- `npm run test`: Executes core logic tests.
+- `npm run lint`: Checks for TypeScript errors.
+
+## License
+
+Private - All rights reserved.

@@ -9,6 +9,3 @@ coverage/
 Screenshot*.png
 *.zip
 local-cms/*.json
-!local-cms/properties.json
-!local-cms/leads.json
-!local-cms/feedback.json
