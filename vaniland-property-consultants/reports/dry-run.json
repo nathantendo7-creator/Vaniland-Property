@@ -1,0 +1,23 @@
+{
+  "rowCount": 9,
+  "successCount": 9,
+  "duplicateCodes": [],
+  "malformedRows": [],
+  "fieldCompletenessSummary": {
+    "code": 9,
+    "title": 9,
+    "type": 9,
+    "status": 9,
+    "price": 7,
+    "currency": 9,
+    "bedrooms": 9,
+    "bathrooms": 9,
+    "location": 9,
+    "images": 9,
+    "description": 3,
+    "amenities": 9,
+    "featured": 9,
+    "premium": 3,
+    "published": 9
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1772699031886",
+    "createdAt": "2026-03-05T08:23:51.886Z",
+    "name": "Nathan Tendo Bbaale",
+    "email": "nathantendo7@gmail.com",
+    "phone": "+256782165730",
+    "propertyCode": "240178",
+    "goal": "rent",
+    "budget": "500m+"
+  },
+  {
+    "id": "1772699401600",
+    "createdAt": "2026-03-05T08:30:01.600Z",
+    "name": "Nathan Tendo Bbaale",
+    "email": "edithkawuma90@gmail.com",
+    "phone": "+256782165730",
+    "propertyCode": "240178",
+    "goal": "invest",
+    "budget": "50m-200m"
+  }
+]

@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Root-specific ignores
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+# Exclude the zip file and screenshots as discussed
+vaniland-property-consultants.zip
+Screenshot*.png
