@@ -57,6 +57,9 @@ export default function ListingDetail() {
           alt={listing.title}
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-12">

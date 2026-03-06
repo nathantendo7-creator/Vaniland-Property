@@ -27,6 +27,9 @@ export default function ListingCard({ listing }: ListingProps) {
           src={images[currentImageIndex]}
           alt={listing.title}
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80";
+          }}
         />
         
         {/* Badges */}
