@@ -15,7 +15,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p1.jpeg"
+      "/properties/p1.webp"
     ],
     "description": null,
     "amenities": [],
@@ -38,7 +38,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p2.jpeg"
+      "/properties/p2.webp"
     ],
     "description": null,
     "amenities": [],
@@ -61,7 +61,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p3.jpeg"
+      "/properties/p3.webp"
     ],
     "description": null,
     "amenities": [],
@@ -84,7 +84,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p4.jpeg"
+      "/properties/p4.webp"
     ],
     "description": null,
     "amenities": [],
@@ -107,7 +107,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p5.jpeg"
+      "/properties/p5.webp"
     ],
     "description": null,
     "amenities": [],
@@ -130,7 +130,7 @@
       "lon": null
     },
     "images": [
-      "/properties/p6.jpeg"
+      "/properties/p6.webp"
     ],
     "description": null,
     "amenities": [],

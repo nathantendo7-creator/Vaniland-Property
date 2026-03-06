@@ -8,4 +8,10 @@ coverage/
 !.env.example
 Screenshot*.png
 *.zip
+
+# Allow the seed file for Vercel
+!seed/seed-properties.json
+!public/properties/*.webp
+
+# Keep local CMS ignored
 local-cms/*.json
