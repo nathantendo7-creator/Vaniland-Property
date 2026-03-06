@@ -129,17 +129,6 @@ export default function Listings() {
               {listings.map((listing: any) => (
                 <ListingCard key={listing.code} listing={listing} />
               ))}
-              
-              {/* Luxury CTA Card */}
-              <div className="bg-deep-navy text-white p-10 rounded-sm flex flex-col justify-center space-y-6 border border-gold/20 shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gold"></div>
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">Exclusive Portfolio</span>
-                <h3 className="text-3xl font-montserrat font-light leading-tight uppercase tracking-wider">Unlock private inventory</h3>
-                <p className="font-serif-luxury text-lg text-white/60 leading-relaxed">Access off-market opportunities and premium investments through our private consultancy.</p>
-                <button className="bg-gold text-white py-4 px-8 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] w-fit hover:bg-white hover:text-deep-navy transition-all">
-                  Request Access
-                </button>
-              </div>
             </div>
           )}
         </div>
