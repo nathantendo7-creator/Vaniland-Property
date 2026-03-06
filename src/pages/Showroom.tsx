@@ -118,7 +118,7 @@ export default function Showroom() {
               className="showroom-card group block relative aspect-[4/5] overflow-hidden rounded-sm bg-slate-800"
             >
               <img 
-                src={showroomImages[index % showroomImages.length]} 
+                src={(prop.images && prop.images.length > 0) ? prop.images[0] : showroomImages[index % showroomImages.length]} 
                 alt={prop.title}
                 className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-1000 ease-out"
                 referrerPolicy="no-referrer"

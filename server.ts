@@ -41,8 +41,14 @@ async function startServer() {
   app.get("/api/search", (req, res) => {
     try {
       const properties = getProperties();
-      const { status, type, district, priceMin, priceMax, beds, q } = req.query;
+      let { status, type, district, priceMin, priceMax, beds, q, goal } = req.query;
       
+      // Map goal to status if status is not provided
+      if (!status && goal) {
+        if (goal === 'buy') status = 'for-sale';
+        if (goal === 'rent') status = 'for-rent';
+      }
+
       let results = properties;
       // ... (rest of search logic)
 

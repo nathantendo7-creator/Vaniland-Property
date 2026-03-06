@@ -1,15 +1,22 @@
 [
   {
     "code": "240181",
-    "title": "Amazing Apartment",
+    "title": "Modern Kyanja View Apartment",
     "type": "apartment",
     "status": "for-rent",
     "price": 1400000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Kampala", "neighborhood": "Kyanja", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Kampala",
+      "neighborhood": "Kyanja",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p1.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -17,15 +24,22 @@
   },
   {
     "code": "240178",
-    "title": "Sparkling Apartment",
+    "title": "Luxury Penthouse in Kira",
     "type": "apartment",
     "status": "for-rent",
     "price": 1300000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Wakiso", "neighborhood": "Kira", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Kira",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p2.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -33,15 +47,22 @@
   },
   {
     "code": "240174",
-    "title": "Spacious Newly Built",
+    "title": "Spacious Family Home Kira",
     "type": "apartment",
     "status": "for-rent",
     "price": 1000000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Wakiso", "neighborhood": "Kira", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Kira",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p3.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -49,15 +70,22 @@
   },
   {
     "code": "240179",
-    "title": "Fabulous Apartment",
+    "title": "Fabulous Apartment with Garden",
     "type": "apartment",
     "status": "for-rent",
     "price": 800000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Wakiso", "neighborhood": "Kira", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Kira",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p4.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -65,15 +93,22 @@
   },
   {
     "code": "240192",
-    "title": "Exclusive Double Room",
+    "title": "Exclusive Double Room Bweyogerere",
     "type": "apartment",
-    "status": "for-rent",
-    "price": 800000,
+    "status": "for-sale",
+    "price": 450000000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Wakiso", "neighborhood": "Bweyogerere", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Bweyogerere",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p5.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -81,15 +116,22 @@
   },
   {
     "code": "240182",
-    "title": "Trendy Semi-Detached",
+    "title": "Trendy Semi-Detached Namugongo",
     "type": "semi-detached",
-    "status": "for-rent",
-    "price": 750000,
+    "status": "for-sale",
+    "price": 500000000,
     "currency": "UGX",
     "bedrooms": 2,
     "bathrooms": 2,
-    "location": {"district": "Wakiso", "neighborhood": "Namugongo", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Namugongo",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "/properties/p6.jpeg"
+    ],
     "description": null,
     "amenities": [],
     "featured": true,
@@ -97,15 +139,22 @@
   },
   {
     "code": "PREM-001",
-    "title": "First Class Apartment",
+    "title": "First Class Ntinda Residency",
     "type": "apartment",
-    "status": "for-rent",
-    "price": null,
+    "status": "for-sale",
+    "price": 550000000,
     "currency": "UGX",
     "bedrooms": 3,
     "bathrooms": 3,
-    "location": {"district": "Kampala", "neighborhood": "Ntinda", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Kampala",
+      "neighborhood": "Ntinda",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop"
+    ],
     "description": "Contemporary design in the heart of Ntinda, Kampala.",
     "amenities": [],
     "featured": true,
@@ -114,15 +163,22 @@
   },
   {
     "code": "PREM-002",
-    "title": "Luxury Apartment",
+    "title": "Premium Buwaate Estate",
     "type": "apartment",
-    "status": "for-rent",
-    "price": 2000000,
+    "status": "for-sale",
+    "price": 600000000,
     "currency": "UGX",
     "bedrooms": 4,
     "bathrooms": 4,
-    "location": {"district": "Wakiso", "neighborhood": "Buwaate", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Buwaate",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
+    ],
     "description": "Located on Buwaate Road.",
     "amenities": [],
     "featured": true,
@@ -131,15 +187,22 @@
   },
   {
     "code": "PREM-003",
-    "title": "Modern Apartment",
+    "title": "Modern Najjera Smart Home",
     "type": "apartment",
-    "status": "for-rent",
-    "price": null,
+    "status": "for-sale",
+    "price": 650000000,
     "currency": "UGX",
     "bedrooms": 3,
     "bathrooms": 3,
-    "location": {"district": "Wakiso", "neighborhood": "Najjera", "lat": null, "lon": null},
-    "images": [],
+    "location": {
+      "district": "Wakiso",
+      "neighborhood": "Najjera",
+      "lat": null,
+      "lon": null
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6199f7e009?q=80&w=2000&auto=format&fit=crop"
+    ],
     "description": "High-end finish, ideal for families or professionals.",
     "amenities": [],
     "featured": true,

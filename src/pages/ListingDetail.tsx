@@ -53,7 +53,7 @@ export default function ListingDetail() {
     <div className="min-h-screen bg-slate-50 pb-20">
       <div className="h-[50vh] min-h-[400px] relative bg-slate-200">
         <img
-          src={`https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80`}
+          src={listing.images && listing.images.length > 0 ? listing.images[0] : `https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80`}
           alt={listing.title}
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
