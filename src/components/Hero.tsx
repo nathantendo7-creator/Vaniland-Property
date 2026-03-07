@@ -1,11 +1,40 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState<'buy' | 'rent' | 'sell'>('buy');
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  
+  const container = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    
+    tl.from(titleRef.current, {
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      delay: 0.2
+    })
+    .from(subtitleRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+    }, '-=0.8')
+    .from(searchRef.current, {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      scale: 0.98
+    }, '-=0.6');
+  }, { scope: container });
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,7 +47,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div ref={container} className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80"
@@ -30,14 +59,14 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-4xl px-4 text-center">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-montserrat font-extralight text-white tracking-[0.1em] uppercase mb-4 drop-shadow-2xl">
+        <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-montserrat font-extralight text-white tracking-[0.1em] uppercase mb-4 drop-shadow-2xl">
           Find your <span className="font-serif-luxury lowercase tracking-normal">place</span>
         </h1>
-        <p className="text-white/80 font-serif-luxury text-xl md:text-2xl mb-12 tracking-wide">
+        <p ref={subtitleRef} className="text-white/80 font-serif-luxury text-xl md:text-2xl mb-12 tracking-wide">
           Curated excellence in Ugandan real estate
         </p>
         
-        <div className="bg-white/10 backdrop-blur-xl p-2 rounded-sm border border-white/20 shadow-2xl max-w-3xl mx-auto">
+        <div ref={searchRef} className="bg-white/10 backdrop-blur-xl p-2 rounded-sm border border-white/20 shadow-2xl max-w-3xl mx-auto">
           <div className="flex gap-1 mb-2">
             {(['buy', 'rent', 'sell'] as const).map((tab) => (
               <button
