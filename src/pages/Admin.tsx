@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import { Users, Home, Phone, Mail, Clock, Plus, Trash2, X, Edit2, Image as ImageIcon, Save, MessageSquare, Star } from 'lucide-react';
 
 interface Property {
@@ -93,7 +93,7 @@ export default function Admin() {
     setFormData(INITIAL_FORM_STATE);
   };
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (saving) return;
 

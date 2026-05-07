@@ -7,6 +7,19 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [react(), tailwindcss()],
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'lucide-react',
+        'gsap',
+        '@gsap/react',
+        'leaflet',
+        'react-leaflet',
+        'motion'
+      ],
+    },
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -26,13 +39,6 @@ export default defineConfig(({mode}) => {
     server: {
       port: 5173,
       host: true,
-      proxy: {
-        '/api': {
-          target: 'http://127.0.0.1:3000',
-          changeOrigin: true,
-          secure: false,
-        },
-      },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',

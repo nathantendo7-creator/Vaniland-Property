@@ -39,7 +39,7 @@ export default function PropertyMap({ location }: PropertyMapProps) {
   const position = getCoordinates(location);
 
   return (
-    <div className="w-full h-full rounded-xl overflow-hidden border border-slate-200 shadow-sm relative z-0">
+    <div className="w-full h-full overflow-hidden border border-deep-navy/10 shadow-sm relative z-0 bg-slate-200">
       <MapContainer center={position} zoom={14} className="w-full h-full" scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

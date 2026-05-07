@@ -35,7 +35,7 @@ export default function MapView({ listings }: MapViewProps) {
   const center: [number, number] = [0.3476, 32.5825]; // Kampala center
 
   return (
-    <div className="w-full h-[600px] rounded-xl overflow-hidden border border-slate-200 shadow-sm relative z-0">
+    <div className="w-full h-full min-h-[420px] overflow-hidden border border-deep-navy/10 shadow-sm relative z-0 bg-slate-200">
       <MapContainer center={center} zoom={11} className="w-full h-full">
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -51,7 +51,7 @@ export default function MapView({ listings }: MapViewProps) {
             <Marker key={listing.code} position={position}>
               <Popup className="custom-popup">
                 <div className="p-1 min-w-[200px]">
-                  <div className="h-24 bg-slate-200 rounded-lg mb-3 overflow-hidden">
+                  <div className="h-24 bg-slate-200 mb-3 overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
                       alt={listing.title}
@@ -67,7 +67,7 @@ export default function MapView({ listings }: MapViewProps) {
                   <p className="text-sm font-bold text-deep-navy mb-3">{formattedPrice}</p>
                   <Link 
                     to={`/listing/${listing.code}`}
-                    className="block w-full text-center bg-deep-navy text-white py-2 rounded text-xs font-medium hover:bg-gold transition-colors"
+                    className="block w-full text-center bg-deep-navy text-white py-2 text-xs font-medium hover:bg-gold transition-colors"
                   >
                     View Details
                   </Link>

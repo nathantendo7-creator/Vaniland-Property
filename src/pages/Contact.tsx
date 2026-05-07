@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Send } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
+import { motion } from 'motion/react';
 
-export default function Contact() {
+interface ContactProps {
+  defaultGoal?: string;
+}
+
+export default function Contact({ defaultGoal }: ContactProps) {
   const [searchParams] = useSearchParams();
-  const goal = searchParams.get('goal') || 'buy';
+  const goal = searchParams.get('goal') || defaultGoal || 'buy';
   
   const [formData, setFormData] = useState({
     name: '',
@@ -17,7 +22,7 @@ export default function Contact() {
   
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     
@@ -39,40 +44,37 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
     <div className="min-h-screen bg-warm-white">
-      {/* Pattern Header */}
       <div className="h-[340px] w-full bg-deep-navy flex flex-col items-center justify-center text-center px-4 relative overflow-hidden border-b border-gold/30">
-        {/* Diagonal Lines Pattern in Gold */}
         <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #C1A36F 0, #C1A36F 1px, transparent 0, transparent 20px)' }}></div>
         
-        <div className="relative z-10">
+        <motion.div initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7, ease: 'easeOut' }} className="relative z-10">
           <p className="text-gold font-bold text-[10px] uppercase tracking-[0.4em] mb-4">Consultation Request</p>
-          <h1 className="text-4xl md:text-6xl font-montserrat font-light text-white uppercase tracking-widest mb-6">
+          <h1 className="text-4xl md:text-6xl font-montserrat font-light text-white uppercase tracking-[0.08em] mb-6">
             Begin your <span className="font-serif-luxury lowercase tracking-normal text-gold">journey</span>
           </h1>
           <p className="text-white/50 font-serif-luxury text-xl">Tell us how we can guide you.</p>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto py-24 px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row gap-20">
-          {/* Form Side */}
-          <div className="flex-grow max-w-2xl bg-white p-12 shadow-2xl rounded-sm border border-gold/10">
-            <h2 className="text-2xl font-montserrat font-light uppercase tracking-widest text-deep-navy mb-12 flex items-center gap-4">
+      <div className="max-w-[1200px] mx-auto py-16 sm:py-24 px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
+          <div className="bg-white p-6 sm:p-10 lg:p-12 shadow-2xl shadow-deep-navy/10 border border-gold/10">
+            <h2 className="text-2xl font-montserrat font-light uppercase tracking-[0.12em] text-deep-navy mb-10 flex items-center gap-4">
               Inquiry Form <div className="h-[1px] flex-grow bg-gold/30"></div>
             </h2>
             
             {status === 'success' ? (
               <div className="py-20 text-center">
-                <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <div className="w-20 h-20 bg-gold/10 flex items-center justify-center mx-auto mb-8">
                   <Send className="text-gold" size={32} />
                 </div>
-                <h3 className="text-2xl font-montserrat font-light text-deep-navy uppercase tracking-widest mb-4">Request Received</h3>
+                <h3 className="text-2xl font-montserrat font-light text-deep-navy uppercase tracking-[0.12em] mb-4">Request Received</h3>
                 <p className="font-serif-luxury text-lg text-slate-500 mb-10">Thank you for reaching out. An expert consultant will contact you shortly.</p>
                 <button 
                   onClick={() => setStatus('idle')}
@@ -82,8 +84,8 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <form onSubmit={handleSubmit} className="space-y-9">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gold">Full Name</label>
                     <input
@@ -110,7 +112,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-gold">Phone Number</label>
                     <input
@@ -151,7 +153,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="bg-deep-navy text-gold px-12 py-5 rounded-sm text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold hover:text-white transition-all shadow-xl disabled:opacity-50"
+                  className="bg-deep-navy text-gold px-8 sm:px-12 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold hover:text-white transition-all shadow-xl disabled:opacity-50"
                 >
                   {status === 'submitting' ? 'Submitting...' : 'Submit Request'}
                 </button>
@@ -159,9 +161,8 @@ export default function Contact() {
             )}
           </div>
 
-          {/* Luxury CTA Side */}
-          <div className="lg:w-1/3">
-            <div className="relative aspect-[3/4] overflow-hidden group shadow-2xl border border-gold/20">
+          <div>
+            <div className="relative aspect-[3/4] min-h-[520px] overflow-hidden group shadow-2xl border border-gold/20">
               <img
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
                 alt="Vaniland Expert"
@@ -170,15 +171,16 @@ export default function Contact() {
               <div className="absolute inset-0 bg-deep-navy/30"></div>
               
               <div className="absolute bottom-0 left-0 w-full p-8">
-                <div className="bg-white p-10 shadow-2xl relative overflow-hidden border border-gold/10">
+                <div className="bg-white p-8 shadow-2xl relative overflow-hidden border border-gold/10">
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-gold"></div>
-                  <h3 className="text-2xl font-montserrat font-light uppercase tracking-widest text-deep-navy mb-6">Expert <br/>Guidance</h3>
+                  <h3 className="text-2xl font-montserrat font-light uppercase tracking-[0.12em] text-deep-navy mb-6">Expert <br/>Guidance</h3>
                   <p className="font-serif-luxury text-lg text-slate-500 leading-relaxed mb-8">
                     Our senior consultants provide bespoke market analysis for high-net-worth acquisitions and elite developments.
                   </p>
-                  <button className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold border-b border-gold pb-1 hover:text-deep-navy hover:border-deep-navy transition-all">
-                    Meet the team
-                  </button>
+                  <div className="space-y-3 text-[11px] font-bold uppercase tracking-widest text-deep-navy/60">
+                    <a href="tel:+256758589258" className="flex items-center gap-3 hover:text-gold transition-colors"><Phone size={15} className="text-gold" /> +256-758-589258</a>
+                    <a href="mailto:info@VanilandProperty.com" className="flex items-center gap-3 hover:text-gold transition-colors break-all"><Mail size={15} className="text-gold" /> info@VanilandProperty.com</a>
+                  </div>
                 </div>
               </div>
             </div>

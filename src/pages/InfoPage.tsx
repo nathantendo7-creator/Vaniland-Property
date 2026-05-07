@@ -44,15 +44,15 @@ export default function InfoPage() {
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #C1A36F 0, #C1A36F 1px, transparent 0, transparent 20px)' }}></div>
         <div className="relative z-10">
           <p className="text-gold font-bold text-[10px] uppercase tracking-[0.4em] mb-4">Vaniland Expertise</p>
-          <h1 className="text-4xl md:text-5xl font-montserrat font-light text-white uppercase tracking-widest mb-4">
+          <h1 className="text-4xl md:text-5xl font-montserrat font-light text-white uppercase tracking-[0.08em] mb-4">
             {content.title}
           </h1>
           <p className="text-white/50 font-serif-luxury text-xl">{content.subtitle}</p>
         </div>
       </div>
 
-      <div className="max-w-[800px] mx-auto py-24 px-6 md:px-8">
-        <div className="prose prose-slate max-w-none">
+      <div className="max-w-[900px] mx-auto py-20 sm:py-24 px-6 md:px-8">
+        <div className="bg-white border border-deep-navy/10 p-8 sm:p-12 shadow-xl shadow-deep-navy/5">
           <p className="font-serif-luxury text-2xl text-deep-navy/80 leading-relaxed mb-12 border-l-4 border-gold pl-8">
             {content.body}
           </p>
